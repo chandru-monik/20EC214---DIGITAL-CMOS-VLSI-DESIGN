@@ -12,7 +12,6 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    scroll-behavior:smooth;
     font-family:'Poppins',sans-serif;
 }
 
@@ -21,6 +20,7 @@ body{
     color:#fff;
 }
 
+/* HEADER */
 header{
     display:flex;
     justify-content:space-between;
@@ -40,26 +40,28 @@ nav a{
     color:#fff;
     text-decoration:none;
     margin-left:20px;
-    transition:0.3s;
 }
+
 nav a:hover{
     color:#38bdf8;
 }
 
-section{
-    padding:120px 8%;
-}
-
+/* HERO */
 .hero{
     text-align:center;
-    padding-top:120px;
-}
-.hero h1{
-    font-size:36px;
-    color:#38bdf8;
-    margin-bottom:10px;
+    padding:150px 8% 60px;
 }
 
+.hero h1{
+    color:#38bdf8;
+}
+
+/* SECTION */
+section{
+    padding:80px 8%;
+}
+
+/* CARDS */
 .card-container{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -72,28 +74,52 @@ section{
     border-radius:10px;
     transition:0.4s;
 }
+
 .card:hover{
     transform:translateY(-8px);
     box-shadow:0 0 20px #38bdf8;
 }
 
+/* BUTTON */
 .btn{
     display:inline-block;
     padding:10px 20px;
     margin-top:10px;
     background:#38bdf8;
     color:#000;
-    text-decoration:none;
+    border:none;
+    cursor:pointer;
     border-radius:5px;
 }
-.btn:hover{
-    background:#0ea5e9;
-}
 
+/* FOOTER */
 footer{
     text-align:center;
     padding:20px;
     background:#111827;
+}
+
+/* VIEWER */
+#viewer{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#000;
+    z-index:2000;
+}
+
+#viewer button{
+    position:absolute;
+    top:20px;
+    right:20px;
+    padding:10px 15px;
+    background:red;
+    color:#fff;
+    border:none;
+    cursor:pointer;
 }
 </style>
 </head>
@@ -102,8 +128,9 @@ footer{
 
 <header>
 <div class="logo">
-    <img src="logo.png">
+<img src="logo.png">
 </div>
+
 <nav>
 <a href="#home">Home</a>
 <a href="#modules">Modules</a>
@@ -130,8 +157,7 @@ footer{
 <div class="card">
 <h3>Module I</h3>
 <p>MOS Transistor and Processing Technology</p>
-<a href="https://www.slideshare.net/slideshow/comprehensive-course-on-digital-cmos-vlsi-circuits-and-mos-transistor-technology/286997451" 
-class="btn" target="_blank">View Slides (SlideShare)</a>
+<a href="https://www.slideshare.net/slideshow/comprehensive-course-on-digital-cmos-vlsi-circuits-and-mos-transistor-technology/286997451" target="_blank" class="btn">View Slides (SlideShare)</a>
 </div>
 
 <div class="card">
@@ -142,29 +168,20 @@ class="btn" target="_blank">View Slides (SlideShare)</a>
 
 <div class="card">
 <h3>Module III</h3>
-<p>Design of Arithmetic Building Blocks</p>
-<a href="https://www.scribd.com/presentation/1026146950/20EC214-CMOS-VLSI-Design-Module-III-Arithmetic-Building-Blocks" 
-target="_blank" class="btn">
-View Slides (Scribd)
-</a>
+<p>Arithmetic Building Blocks</p>
+<button class="btn" onclick="openViewer('https://www.scribd.com/embeds/1026146950/content')">View Slides</button>
 </div>
 
 <div class="card">
 <h3>Module IV</h3>
 <p>Timing Issues</p>
-<a href="https://www.scribd.com/presentation/1026146951/20EC214-CMOS-VLSI-Design-Module-IV-Timing-Issues" 
-target="_blank" class="btn">
-View Slides (Scribd)
-</a>
+<button class="btn" onclick="openViewer('https://www.scribd.com/embeds/1026146951/content')">View Slides</button>
 </div>
 
 <div class="card">
 <h3>Module V</h3>
 <p>Memory Array Subsystem</p>
-<a href="https://www.scribd.com/presentation/1026146956/20EC214-CMOS-VLSI-Design-Module-V-Memory-Array-Subsystem" 
-target="_blank" class="btn">
-View Slides (Scribd)
-</a>
+<button class="btn" onclick="openViewer('https://www.scribd.com/embeds/1026146956/content')">View Slides</button>
 </div>
 
 </div>
@@ -178,7 +195,7 @@ View Slides (Scribd)
 
 <div class="card">
 <h3>CMOS VLSI Design</h3>
-<p>Neil H. E. Weste & David Harris (4th Edition)</p>
+<p>Neil H. E. Weste & David Harris</p>
 <a href="textbook1.pdf" target="_blank" class="btn">View PDF</a>
 </div>
 
@@ -202,8 +219,26 @@ View Slides (Scribd)
 </section>
 
 <footer>
-© 2026 R CHANDRU | 20EC214 DIGITAL CMOS VLSI DESIGN
+© 2026 R CHANDRU | CMOS VLSI DESIGN
 </footer>
+
+<!-- VIEWER -->
+<div id="viewer">
+<button onclick="closeViewer()">Close ✖</button>
+<iframe id="viewerFrame" style="width:100%; height:100%; border:none;"></iframe>
+</div>
+
+<script>
+function openViewer(link){
+    document.getElementById("viewer").style.display = "block";
+    document.getElementById("viewerFrame").src = link;
+}
+
+function closeViewer(){
+    document.getElementById("viewer").style.display = "none";
+    document.getElementById("viewerFrame").src = "";
+}
+</script>
 
 </body>
 </html>
