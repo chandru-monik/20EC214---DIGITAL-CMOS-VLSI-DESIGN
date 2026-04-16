@@ -84,34 +84,13 @@ border-radius:6px;
 text-decoration:none;
 }
 
-/* LECTURE BUTTON */
-.lecture{
-margin-top:10px;
-}
-
-.lecture-btn{
-width:100%;
-padding:10px;
-background:#0ea5e9;
-border:none;
-color:#000;
-border-radius:6px;
-cursor:pointer;
-text-align:left;
-font-weight:500;
-}
-
 /* VIDEO */
-.video-box{
-display:none;
-margin-top:10px;
-}
-
 iframe{
 width:100%;
 height:200px;
 border:none;
 border-radius:10px;
+margin-top:10px;
 }
 
 /* VIEWER */
@@ -155,90 +134,78 @@ background:#111827;
 <nav>
 <a href="#home">Home</a>
 <a href="#modules">Modules</a>
+<a href="#videos">Videos</a>
 <a href="#materials">Materials</a>
 <a href="#contact">Contact</a>
 </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero" id="home">
 <h1>CMOS VLSI DESIGN</h1>
 <p>20EC214 | R Chandru</p>
 <p>Interactive Digital Learning Platform</p>
 </section>
 
+<!-- MODULES -->
 <section id="modules">
 <h2>Course Modules</h2><br>
 
 <div class="card-container">
 
-<!-- MODULE 1 -->
 <div class="card">
 <h3>Module I</h3>
 <p>MOS Transistor</p>
-
-<a href="https://www.slideshare.net/slideshow/comprehensive-course-on-digital-cmos-vlsi-circuits-and-mos-transistor-technology/286997451" target="_blank" class="btn">
-View Slides
-</a>
-
-<h4 style="margin-top:15px;">📺 Lectures</h4>
-
-<div class="lecture">
-<button class="lecture-btn" onclick="toggleVideo('vid1')">
-▶ Lecture 1: VLSI Design Flow
-</button>
-<div id="vid1" class="video-box">
-<iframe src="https://www.youtube.com/embed/je1jmSqln78"></iframe>
-</div>
+<a href="https://www.slideshare.net/slideshow/comprehensive-course-on-digital-cmos-vlsi-circuits-and-mos-transistor-technology/286997451" target="_blank" class="btn">View Slides</a>
 </div>
 
-<div class="lecture">
-<button class="lecture-btn" onclick="toggleVideo('vid2')">
-▶ Lecture 2: Gajski Y-Chart
-</button>
-<div id="vid2" class="video-box">
-<iframe src="https://www.youtube.com/embed/YEyfn7htkd0"></iframe>
-</div>
-</div>
-
-</div>
-
-<!-- MODULE 2 -->
 <div class="card">
 <h3>Module II</h3>
 <p>CMOS Logic</p>
-
-<a href="https://www.slideshare.net/slideshow/20ec214-cmos-vlsi-design-module-ii-cmos-logic-structures/286997491" target="_blank" class="btn">
-View Slides
-</a>
+<a href="https://www.slideshare.net/slideshow/20ec214-cmos-vlsi-design-module-ii-cmos-logic-structures/286997491" target="_blank" class="btn">View Slides</a>
 </div>
 
-<!-- MODULE 3 -->
 <div class="card">
 <h3>Module III</h3>
-<button class="btn" onclick="openViewer('https://www.scribd.com/embeds/1026146950/content')">
-View Slides
-</button>
+<button class="btn" onclick="openViewer('https://www.scribd.com/embeds/1026146950/content')">View Slides</button>
 </div>
 
-<!-- MODULE 4 -->
 <div class="card">
 <h3>Module IV</h3>
-<button class="btn" onclick="openViewer('https://www.scribd.com/embeds/1026146951/content')">
-View Slides
-</button>
+<button class="btn" onclick="openViewer('https://www.scribd.com/embeds/1026146951/content')">View Slides</button>
 </div>
 
-<!-- MODULE 5 -->
 <div class="card">
 <h3>Module V</h3>
-<button class="btn" onclick="openViewer('https://www.scribd.com/embeds/1026146956/content')">
-View Slides
-</button>
+<button class="btn" onclick="openViewer('https://www.scribd.com/embeds/1026146956/content')">View Slides</button>
 </div>
 
 </div>
 </section>
 
+<!-- VIDEO SECTION -->
+<section id="videos">
+<h2>📺 Video Lectures</h2><br>
+
+<h3>Module I</h3><br>
+
+<div class="card-container">
+
+<div class="card">
+<p><b>Lecture 1:</b> VLSI Design Flow</p>
+<iframe src="https://www.youtube.com/embed/je1jmSqln78"></iframe>
+</div>
+
+<div class="card">
+<p><b>Lecture 2:</b> Gajski Y-Chart</p>
+<iframe src="https://www.youtube.com/embed/YEyfn7htkd0"></iframe>
+</div>
+
+</div>
+
+</section>
+
+<!-- MATERIALS -->
 <section id="materials">
 <h2>Text Books</h2><br>
 
@@ -257,6 +224,7 @@ View Slides
 </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
 <h2>Contact</h2><br>
 <p>R Chandru</p>
@@ -268,23 +236,13 @@ View Slides
 © 2026 CMOS VLSI DESIGN
 </footer>
 
-<!-- SCRIBD VIEWER -->
+<!-- SCRIBD VIEW -->
 <div id="viewer">
 <button onclick="closeViewer()">Close ✖</button>
 <iframe id="viewerFrame" style="width:100%;height:100%;border:none;"></iframe>
 </div>
 
 <script>
-function toggleVideo(id){
-let el = document.getElementById(id);
-
-if(el.style.display === "block"){
-el.style.display = "none";
-}else{
-el.style.display = "block";
-}
-}
-
 function openViewer(link){
 document.getElementById("viewer").style.display="block";
 document.getElementById("viewerFrame").src=link;
