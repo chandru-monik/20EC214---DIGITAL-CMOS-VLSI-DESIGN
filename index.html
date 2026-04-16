@@ -24,6 +24,7 @@ color:#fff;
 header{
 display:flex;
 justify-content:space-between;
+align-items:center;
 padding:15px 8%;
 background:#111827;
 position:fixed;
@@ -31,7 +32,9 @@ width:100%;
 z-index:1000;
 }
 
-.logo img{height:40px;}
+.logo img{
+height:40px;
+}
 
 nav a{
 color:#fff;
@@ -42,19 +45,19 @@ text-decoration:none;
 /* HERO */
 .hero{
 text-align:center;
-padding:150px 8% 60px;
+padding:140px 8% 60px;
 background:linear-gradient(to right,#0ea5e9,#020617);
 }
 
 /* SECTION */
 section{
-padding:80px 8%;
+padding:60px 8%;
 }
 
 /* CARDS */
 .card-container{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 
@@ -67,36 +70,20 @@ border-radius:15px;
 /* BUTTON */
 .btn{
 display:block;
-width:100%;
-padding:10px;
+text-align:center;
 margin-top:10px;
+padding:10px;
 background:#38bdf8;
 color:#000;
 border-radius:6px;
-text-align:center;
 text-decoration:none;
-cursor:pointer;
 }
 
-/* LECTURE LIST */
-.lecture-list{
-display:none;
-margin-top:10px;
-}
-
-.lecture-item{
-background:#020617;
-padding:10px;
-border-radius:10px;
-margin-top:10px;
-}
-
-iframe{
-width:100%;
-height:200px;
-border:none;
-border-radius:10px;
-margin-top:5px;
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+background:#111827;
 }
 </style>
 </head>
@@ -107,8 +94,10 @@ margin-top:5px;
 <div class="logo">
 <img src="logo.png">
 </div>
+
 <nav>
 <a href="#modules">Modules</a>
+<a href="#contact">Contact</a>
 </nav>
 </header>
 
@@ -131,23 +120,9 @@ margin-top:5px;
 View Slides
 </a>
 
-<button class="btn" onclick="toggleLecture('m1')">
+<a href="module1.html" class="btn">
 Lectures
-</button>
-
-<div id="m1" class="lecture-list">
-
-<div class="lecture-item">
-<p>Lecture 1: VLSI Design Flow</p>
-<iframe src="https://www.youtube.com/embed/je1jmSqln78"></iframe>
-</div>
-
-<div class="lecture-item">
-<p>Lecture 2: Gajski Y-Chart</p>
-<iframe src="https://www.youtube.com/embed/YEyfn7htkd0"></iframe>
-</div>
-
-</div>
+</a>
 </div>
 
 <!-- MODULE 2 -->
@@ -159,30 +134,53 @@ Lectures
 View Slides
 </a>
 
-<button class="btn" onclick="toggleLecture('m2')">
+<a href="#" class="btn">
 Lectures
-</button>
-
-<div id="m2" class="lecture-list">
-<p style="margin-top:10px;">Coming Soon</p>
+</a>
 </div>
 
+<!-- MODULE 3 -->
+<div class="card">
+<h3>Module III</h3>
+<p>Arithmetic Blocks</p>
+
+<a href="#" class="btn">View Slides</a>
+<a href="#" class="btn">Lectures</a>
+</div>
+
+<!-- MODULE 4 -->
+<div class="card">
+<h3>Module IV</h3>
+<p>Timing Issues</p>
+
+<a href="#" class="btn">View Slides</a>
+<a href="#" class="btn">Lectures</a>
+</div>
+
+<!-- MODULE 5 -->
+<div class="card">
+<h3>Module V</h3>
+<p>Memory</p>
+
+<a href="#" class="btn">View Slides</a>
+<a href="#" class="btn">Lectures</a>
 </div>
 
 </div>
 </section>
 
-<script>
-function toggleLecture(id){
-let el = document.getElementById(id);
+<section id="contact">
+<h2>Contact</h2><br>
+<p>R Chandru</p>
+<p>Assistant Professor</p>
+<p>Department of ECE</p>
+<p>SREC</p>
+<p>Email: chandru.r@srec.ac.in</p>
+</section>
 
-if(el.style.display === "block"){
-el.style.display = "none";
-}else{
-el.style.display = "block";
-}
-}
-</script>
+<footer>
+© 2026 CMOS VLSI DESIGN
+</footer>
 
 </body>
 </html>
