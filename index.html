@@ -32,7 +32,9 @@ width:100%;
 z-index:1000;
 }
 
-.logo img{height:40px;}
+.logo img{
+height:40px;
+}
 
 nav a{
 color:#fff;
@@ -80,42 +82,17 @@ color:#000;
 border-radius:8px;
 text-decoration:none;
 font-weight:500;
-border:none;
-cursor:pointer;
 }
 
 .btn:hover{
 background:#0ea5e9;
 }
 
-/* VIEWER */
-#viewer{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:#000;
-z-index:2000;
-}
-
-#viewer button{
-position:absolute;
-top:20px;
-right:20px;
-background:red;
-color:#fff;
-padding:10px;
-border:none;
-cursor:pointer;
-}
-
-/* FOOTER */
-footer{
-text-align:center;
-padding:20px;
-background:#111827;
+/* DISABLED BUTTON */
+.disabled{
+background:#475569;
+pointer-events:none;
+cursor:not-allowed;
 }
 </style>
 </head>
@@ -129,8 +106,6 @@ background:#111827;
 
 <nav>
 <a href="#modules">Modules</a>
-<a href="#materials">Materials</a>
-<a href="#contact">Contact</a>
 </nav>
 </header>
 
@@ -139,7 +114,6 @@ background:#111827;
 <p>20EC214 | R Chandru</p>
 </section>
 
-<!-- MODULES -->
 <section id="modules">
 <h2>Course Modules</h2>
 
@@ -154,9 +128,9 @@ background:#111827;
 View Slides
 </a>
 
-<button class="btn" onclick="openModule1Videos()">
+<a href="module1.html" class="btn">
 Lectures
-</button>
+</a>
 </div>
 
 <!-- MODULE 2 -->
@@ -167,104 +141,56 @@ Lectures
 <a href="https://www.slideshare.net/slideshow/20ec214-cmos-vlsi-design-module-ii-cmos-logic-structures/286997491" target="_blank" class="btn">
 View Slides
 </a>
+
+<a href="#" class="btn disabled">
+Lectures (Coming Soon)
+</a>
 </div>
 
 <!-- MODULE 3 -->
 <div class="card">
 <h3>Module III</h3>
+<p>Arithmetic Blocks</p>
 
-<button class="btn" onclick="openViewer('https://www.scribd.com/embeds/1026146950/content')">
+<a href="https://www.scribd.com/presentation/1026146950/20EC214-CMOS-VLSI-Design-Module-III-Arithmetic-Building-Blocks" target="_blank" class="btn">
 View Slides
-</button>
+</a>
+
+<a href="#" class="btn disabled">
+Lectures (Coming Soon)
+</a>
 </div>
 
 <!-- MODULE 4 -->
 <div class="card">
 <h3>Module IV</h3>
+<p>Timing Issues</p>
 
-<button class="btn" onclick="openViewer('https://www.scribd.com/embeds/1026146951/content')">
+<a href="https://www.scribd.com/presentation/1026146951/20EC214-CMOS-VLSI-Design-Module-IV-Timing-Issues" target="_blank" class="btn">
 View Slides
-</button>
+</a>
+
+<a href="#" class="btn disabled">
+Lectures (Coming Soon)
+</a>
 </div>
 
 <!-- MODULE 5 -->
 <div class="card">
 <h3>Module V</h3>
+<p>Memory</p>
 
-<button class="btn" onclick="openViewer('https://www.scribd.com/embeds/1026146956/content')">
+<a href="https://www.scribd.com/presentation/1026146956/20EC214-CMOS-VLSI-Design-Module-V-Memory-Array-Subsystem" target="_blank" class="btn">
 View Slides
-</button>
+</a>
+
+<a href="#" class="btn disabled">
+Lectures (Coming Soon)
+</a>
 </div>
 
 </div>
 </section>
-
-<!-- MATERIALS -->
-<section id="materials">
-<h2>Text Books</h2>
-
-<div class="card-container">
-
-<div class="card">
-<h3>Weste & Harris</h3>
-<a href="textbook1.pdf" target="_blank" class="btn">View PDF</a>
-</div>
-
-<div class="card">
-<h3>Jan M. Rabaey</h3>
-<a href="textbook2.pdf" target="_blank" class="btn">View PDF</a>
-</div>
-
-</div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-<h2>Contact</h2>
-<p>R Chandru</p>
-<p>Assistant Professor</p>
-<p>Email: chandru.r@srec.ac.in</p>
-</section>
-
-<footer>
-© 2026 CMOS VLSI DESIGN
-</footer>
-
-<!-- VIEWER -->
-<div id="viewer">
-<button onclick="closeViewer()">Close ✖</button>
-<iframe id="viewerFrame" style="width:100%;height:100%;border:none;"></iframe>
-</div>
-
-<script>
-
-function openViewer(link){
-document.getElementById("viewer").style.display="block";
-document.getElementById("viewerFrame").src=link;
-}
-
-/* MODULE 1 VIDEOS */
-function openModule1Videos(){
-document.getElementById("viewer").style.display="block";
-document.getElementById("viewerFrame").src = `
-<html style="background:black">
-<body style="margin:0;display:flex;flex-direction:column;gap:20px;align-items:center">
-
-<iframe width="90%" height="300" src="https://www.youtube.com/embed/je1jmSqln78" frameborder="0" allowfullscreen></iframe>
-
-<iframe width="90%" height="300" src="https://www.youtube.com/embed/YEyfn7htkd0" frameborder="0" allowfullscreen></iframe>
-
-</body>
-</html>
-`;
-}
-
-function closeViewer(){
-document.getElementById("viewer").style.display="none";
-document.getElementById("viewerFrame").src="";
-}
-
-</script>
 
 </body>
 </html>
