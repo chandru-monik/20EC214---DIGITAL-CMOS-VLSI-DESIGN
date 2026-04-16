@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title20EC214 - CMOS VLSI Design</title>
+<title>CMOS VLSI Design</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
@@ -49,24 +49,11 @@ padding:140px 20px 60px;
 background:linear-gradient(to right,#0ea5e9,#020617);
 }
 
-.hero h1{
-font-size:36px;
-margin-bottom:10px;
-}
-
-.hero p{
-opacity:0.9;
-}
-
-/* SECTION (CENTER FIX) */
+/* SECTION */
 section{
 padding:60px 20px;
 max-width:1100px;
 margin:auto;
-}
-
-h2{
-margin-bottom:20px;
 }
 
 /* GRID */
@@ -81,12 +68,6 @@ gap:25px;
 background:#0f172a;
 padding:25px;
 border-radius:15px;
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-box-shadow:0 0 20px rgba(56,189,248,0.3);
 }
 
 /* BUTTON */
@@ -101,19 +82,17 @@ color:#000;
 border-radius:8px;
 text-decoration:none;
 font-weight:500;
-transition:0.3s;
 }
 
 .btn:hover{
 background:#0ea5e9;
 }
 
-/* FOOTER */
-footer{
-text-align:center;
-padding:20px;
-background:#111827;
-margin-top:40px;
+/* DISABLED BUTTON */
+.disabled{
+background:#475569;
+pointer-events:none;
+cursor:not-allowed;
 }
 </style>
 </head>
@@ -127,17 +106,14 @@ margin-top:40px;
 
 <nav>
 <a href="#modules">Modules</a>
-<a href="#contact">Contact</a>
 </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
 <h1>CMOS VLSI DESIGN</h1>
 <p>20EC214 | R Chandru</p>
 </section>
 
-<!-- MODULES -->
 <section id="modules">
 <h2>Course Modules</h2>
 
@@ -166,8 +142,8 @@ Lectures
 View Slides
 </a>
 
-<a href="#" class="btn">
-Lectures
+<a href="#" class="btn disabled">
+Lectures (Coming Soon)
 </a>
 </div>
 
@@ -176,8 +152,13 @@ Lectures
 <h3>Module III</h3>
 <p>Arithmetic Blocks</p>
 
-<a href="#" class="btn">View Slides</a>
-<a href="#" class="btn">Lectures</a>
+<a href="https://www.scribd.com/presentation/1026146950/20EC214-CMOS-VLSI-Design-Module-III-Arithmetic-Building-Blocks" target="_blank" class="btn">
+View Slides
+</a>
+
+<a href="#" class="btn disabled">
+Lectures (Coming Soon)
+</a>
 </div>
 
 <!-- MODULE 4 -->
@@ -185,8 +166,13 @@ Lectures
 <h3>Module IV</h3>
 <p>Timing Issues</p>
 
-<a href="#" class="btn">View Slides</a>
-<a href="#" class="btn">Lectures</a>
+<a href="https://www.scribd.com/presentation/1026146951/20EC214-CMOS-VLSI-Design-Module-IV-Timing-Issues" target="_blank" class="btn">
+View Slides
+</a>
+
+<a href="#" class="btn disabled">
+Lectures (Coming Soon)
+</a>
 </div>
 
 <!-- MODULE 5 -->
@@ -194,27 +180,17 @@ Lectures
 <h3>Module V</h3>
 <p>Memory</p>
 
-<a href="#" class="btn">View Slides</a>
-<a href="#" class="btn">Lectures</a>
+<a href="https://www.scribd.com/presentation/1026146956/20EC214-CMOS-VLSI-Design-Module-V-Memory-Array-Subsystem" target="_blank" class="btn">
+View Slides
+</a>
+
+<a href="#" class="btn disabled">
+Lectures (Coming Soon)
+</a>
 </div>
 
 </div>
 </section>
-
-<!-- CONTACT -->
-<section id="contact">
-<h2>Contact</h2><br>
-
-<p>R Chandru</p>
-<p>Assistant Professor</p>
-<p>Department of ECE</p>
-<p>Sri Ramakrishna Engineering College</p>
-<p>Email: chandru.r@srec.ac.in</p>
-</section>
-
-<footer>
-© 2026 CMOS VLSI DESIGN
-</footer>
 
 </body>
 </html>
