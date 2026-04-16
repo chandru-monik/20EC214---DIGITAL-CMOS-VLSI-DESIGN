@@ -84,27 +84,34 @@ border-radius:6px;
 text-decoration:none;
 }
 
+/* LECTURE BUTTON */
+.lecture{
+margin-top:10px;
+}
+
+.lecture-btn{
+width:100%;
+padding:10px;
+background:#0ea5e9;
+border:none;
+color:#000;
+border-radius:6px;
+cursor:pointer;
+text-align:left;
+font-weight:500;
+}
+
 /* VIDEO */
+.video-box{
+display:none;
+margin-top:10px;
+}
+
 iframe{
 width:100%;
 height:200px;
 border:none;
 border-radius:10px;
-margin-top:5px;
-}
-
-/* VIDEO SECTION */
-.video-item{
-margin-top:10px;
-background:#020617;
-padding:10px;
-border-radius:10px;
-}
-
-.video-item p{
-font-size:14px;
-color:#38bdf8;
-margin-bottom:5px;
 }
 
 /* VIEWER */
@@ -175,14 +182,22 @@ View Slides
 
 <h4 style="margin-top:15px;">📺 Lectures</h4>
 
-<div class="video-item">
-<p>Lecture 1: VLSI Design Flow</p>
+<div class="lecture">
+<button class="lecture-btn" onclick="toggleVideo('vid1')">
+▶ Lecture 1: VLSI Design Flow
+</button>
+<div id="vid1" class="video-box">
 <iframe src="https://www.youtube.com/embed/je1jmSqln78"></iframe>
 </div>
+</div>
 
-<div class="video-item">
-<p>Lecture 2: Gajski Y-Chart</p>
+<div class="lecture">
+<button class="lecture-btn" onclick="toggleVideo('vid2')">
+▶ Lecture 2: Gajski Y-Chart
+</button>
+<div id="vid2" class="video-box">
 <iframe src="https://www.youtube.com/embed/YEyfn7htkd0"></iframe>
+</div>
 </div>
 
 </div>
@@ -260,10 +275,21 @@ View Slides
 </div>
 
 <script>
+function toggleVideo(id){
+let el = document.getElementById(id);
+
+if(el.style.display === "block"){
+el.style.display = "none";
+}else{
+el.style.display = "block";
+}
+}
+
 function openViewer(link){
 document.getElementById("viewer").style.display="block";
 document.getElementById("viewerFrame").src=link;
 }
+
 function closeViewer(){
 document.getElementById("viewer").style.display="none";
 document.getElementById("viewerFrame").src="";
